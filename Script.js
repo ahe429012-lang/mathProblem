@@ -52,7 +52,7 @@ function problem(){
           
         };
 
-funtion submitNum (){
+function submitNum (){
 
      ans=x*y;
       myAns=document.getElementById("myAns");
@@ -69,7 +69,7 @@ funtion submitNum (){
             problem();
             questions++;
             myAns.textContent="";
-  }
+  };
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') { 
      submitNum():
