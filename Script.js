@@ -9,7 +9,7 @@
            var myAns = document.getElementById("myAns");
 function endQuiz(){
                 myAns.disabled= true;
-                start===false;
+                start=false;
             }
             
 var timer = setInterval(function(){
@@ -33,6 +33,7 @@ var timer = setInterval(function(){
         
 function start(){
             start = true;
+            myAns.disabled=false;
             var questions = 0;
 }
             
@@ -54,6 +55,8 @@ function problem(){
 funtion submitNum (){
 
      ans=x*y;
+      myAns=document.getElementById("myAns");
+      userAnswer=number(myAns.value);
       if (ans === userAnswer){
                mark.textContent = "Correct";
                correct++;
@@ -62,8 +65,9 @@ funtion submitNum (){
                mark.textContent = "Incorrect";
            }
            await sleep(1000);
-            for(questions<15 && start===true; questions++;) 
+            
             problem();
+            questions++;
             myAns.textContent="";
   }
 document.addEventListener('keydown', (e) => {
