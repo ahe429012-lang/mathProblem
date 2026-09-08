@@ -6,7 +6,7 @@
             let timeLeft=60;
 
             var timerDisplay = document.getElementById("timerDisplay");
-           
+           var myAns = document.getElementById("myAns");
 function endQuiz(){
                 myAns.disabled= true;
                 start===false;
@@ -24,11 +24,11 @@ var timer = setInterval(function(){
             
             x=1;
             y=1;
-            ans=x*y
-            const start = false;
-            var myAns = document.getElementById("myAns")
+           
+            var start = false;
+            
             var userAnswer = Number(myAns.value);
-            var mark = document.getElementById("mark")
+            var mark = document.getElementById("mark");
             var correct = 0;
         
 function start(){
