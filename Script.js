@@ -52,7 +52,7 @@ function problem(){
           
         };
 
-function submitNum (){
+async function submitNum (){
 
      ans=x*y;
       myAns=document.getElementById("myAns");
