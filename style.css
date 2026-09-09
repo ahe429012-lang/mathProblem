@@ -3,6 +3,10 @@
   height: 500px;
   background-color:rgb(0,200,0);
 }
+#mark {
+  margin:1000px;
+  font-size:100px;
+}
 .questions {
   display:flex;
   items-align:center;
