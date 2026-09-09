@@ -77,7 +77,7 @@ function start(){
             var time=document.getElementById("time");
          if(time.value===""){
             timeLeft=60
-         };
+         }
          else {
             timeLeft=Number(time.value);
          }
