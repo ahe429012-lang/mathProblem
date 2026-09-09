@@ -4,7 +4,9 @@
   background-color:rgb(0,200,0);
 }
 .questions {
-  width:1200px;
+  display:flex;
+  items-align:center;
+  gap:20px;
 }
 #myAns {
   background-color:rgb(210, 210,210);
