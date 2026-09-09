@@ -96,7 +96,7 @@ document.addEventListener('keydown', (e) => {
               problem();
             }
             
-            var score = correct/questions;
+            var score = correct+"/"+"15";
             var scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
 
