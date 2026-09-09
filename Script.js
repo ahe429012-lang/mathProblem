@@ -3,6 +3,7 @@
             var x;
             var y;
             var ans;
+            var questions;
             var startQuiz=false;   
             let timeLeft=60;
 
@@ -12,16 +13,9 @@ function endQuiz(){
                 myAns.disabled= true;
                 startQuiz=false;
             }
-            
-var timer = setInterval(function(){
-                timeLeft--;
-    timerDisplay.textContent =
-        "Time: " + timeLeft;
+            const sleep = (ms) =>
+    new Promise(resolve => setTimeout(resolve, ms));
 
-    if (timeLeft <= 0) {
-        endQuiz();
-    }
-}, 1000);
             
             x=1;
             y=1;
@@ -35,7 +29,16 @@ var timer = setInterval(function(){
 function start(){
             startQuiz = true;
             myAns.disabled=false;
-            var questions = 0;
+            questions = 0;
+            var timer = setInterval(function(){
+                timeLeft--;
+    timerDisplay.textContent =
+        "Time: " + timeLeft;
+
+    if (timeLeft <= 0) {
+        endQuiz();
+    }
+}, 1000);
 }
             
 function updateNum(){
@@ -75,12 +78,12 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') { 
      submitNum();
   }
-};
+});
         
         const button = document.getElementById("start")
-        button.addEventListener("click", start());
+        button.addEventListener("click", start);
             if(startQuiz===true){
-              for(questions<15;questions++;) problem();
+              problem();
             }
             
             var score = correct/questions;
