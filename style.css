@@ -1,12 +1,12 @@
 #start {
-  width:1000px;
-  height: 200 px;
+  width:1500px;
+  height: 500 px;
   background-color:rgb(0,200,0);
 }
 .questions {
   width:1200px;
 }
 #myAns {
-  background-color:rgb(150, 150,150)
+  background-color:rgb(50, 50,50);
   
 }
