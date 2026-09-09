@@ -77,7 +77,7 @@ document.addEventListener('keydown', (e) => {
 
         
         const button = document.getElementById("start")
-        button.addEventListener("click", start(););
+        button.addEventListener("click", start());
             if(start===true){
               for(questions<15;questions++;) problem();
             }
