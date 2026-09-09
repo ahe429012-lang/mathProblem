@@ -4,7 +4,8 @@
             var y;
             var ans;
             var questions;
-            var startQuiz=false;   
+            var startQuiz=false; 
+            var timer;
             let timeLeft=60;
 
             var timerDisplay = document.getElementById("timerDisplay");
@@ -12,6 +13,7 @@
 function endQuiz(){
                 myAns.disabled= true;
                 startQuiz=false;
+               clearInterval(timer);
             }
             const sleep = (ms) =>
     new Promise(resolve => setTimeout(resolve, ms));
@@ -25,22 +27,7 @@ function endQuiz(){
             var userAnswer = Number(myAns.value);
             var mark = document.getElementById("mark");
             var correct = 0;
-        
-function start(){
-            startQuiz = true;
-            myAns.disabled=false;
-            questions = 0;
-            var timer = setInterval(function(){
-                timeLeft--;
-    timerDisplay.textContent =
-        "Time: " + timeLeft;
 
-    if (timeLeft <= 0) {
-        endQuiz();
-    }
-}, 1000);
-}
-            
 function updateNum(){
                 var qX=document.getElementById("x");
                 var qY=document.getElementById("y");
@@ -56,6 +43,24 @@ function problem(){
           
         };
 
+
+function start(){
+            startQuiz = true;
+            myAns.disabled=false;
+            questions = 0;
+            timer = setInterval(function(){
+                timeLeft--;
+    timerDisplay.textContent =
+        "Time: " + timeLeft;
+
+    if (timeLeft <= 0) {
+        endQuiz();
+    }
+}, 1000);
+   problem();
+}
+            
+
 async function submitNum (){
 
      ans=x*y;
@@ -70,8 +75,13 @@ async function submitNum (){
            }
            await sleep(1000);
             
-            problem();
+           if(questions<15){
+              problem();
             questions++;
+           }
+         else{
+            endQuiz();
+         }
             myAns.value="";
   };
 document.addEventListener('keydown', (e) => {
