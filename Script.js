@@ -86,7 +86,7 @@ async function submitNum (){
            }
            else{
                mark.textContent = "Incorrect";
-              correctAns.textContent="The Correct Answer Is:"+ans;
+              correctAns.textContent="The Correct Answer Is: "+ans;
            }
            await sleep(1000);
             mark.textContent = "";
