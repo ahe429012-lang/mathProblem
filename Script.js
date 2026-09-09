@@ -10,6 +10,11 @@
 
             var timerDisplay = document.getElementById("timerDisplay");
            var myAns = document.getElementById("myAns");
+
+               function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function endQuiz(){
                 myAns.disabled= true;
                 startQuiz=false;
