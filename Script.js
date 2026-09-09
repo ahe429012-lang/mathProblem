@@ -6,6 +6,7 @@
             var questions;
             var startQuiz=false; 
             var timer;
+            var scoreBoard;
             let timeLeft=60;
 
             var timerDisplay = document.getElementById("timerDisplay");
@@ -38,6 +39,8 @@ function updateNum(){
                 var qY=document.getElementById("y");
                 qX.textContent=x;
                 qY.textContent=y;
+                scoreBoard=document.getElementById("score");
+            scoreBoard.textContent= score;
 }
 
 function problem(){
@@ -78,6 +81,7 @@ async function submitNum (){
                mark.textContent = "Incorrect";
            }
            await sleep(1000);
+            mark.textContent = "";
             
            if(questions<15){
               problem();
@@ -101,7 +105,7 @@ document.addEventListener('keydown', (e) => {
             }
             
             var score = correct+"/"+"15";
-            var scoreBoard=document.getElementById("score");
+            scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
             if (timeLeft<=0)
             {endQuiz();};
