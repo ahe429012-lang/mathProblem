@@ -62,7 +62,7 @@ function start(){
             timer = setInterval(function(){
                 timeLeft--;
     timerDisplay.textContent =
-        "Time: " + timeLeft;
+        "Time: " + timeLeft+"Seconds";
 }, 1000);
     if (timeLeft <= 0) {
         endQuiz();
