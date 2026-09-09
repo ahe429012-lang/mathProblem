@@ -57,11 +57,10 @@ function start(){
                 timeLeft--;
     timerDisplay.textContent =
         "Time: " + timeLeft;
-
+}, 1000);
     if (timeLeft <= 0) {
         endQuiz();
     }
-}, 1000);
    problem();
 }
             
@@ -104,4 +103,5 @@ document.addEventListener('keydown', (e) => {
             var score = correct+"/"+"15";
             var scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
-
+            if (timeLeft<=0)
+            {endQuiz();};
