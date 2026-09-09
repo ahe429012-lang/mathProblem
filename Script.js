@@ -8,6 +8,7 @@
             var timer;
             var scoreBoard;
             let timeLeft=60;
+            var correctAns=document.getElementById("Ans");
             const button = document.getElementById("start")
 
             var timerDisplay = document.getElementById("timerDisplay");
@@ -42,7 +43,7 @@ function updateNum(){
                 qX.textContent=x;
                 qY.textContent=y;
                 scoreBoard=document.getElementById("score");
-            scoreBoard.textContent= score;
+            scoreBoard.textContent= "Accuracy:"+correct+"/15";
 }
 
 function problem(){
@@ -82,10 +83,11 @@ async function submitNum (){
            }
            else{
                mark.textContent = "Incorrect";
+              correctAns.textContent="The Correct Answer Is:"+ans;
            }
            await sleep(1000);
             mark.textContent = "";
-            
+            correctAns.textContent = "";
            if(questions<15){
               problem();
             questions++;
