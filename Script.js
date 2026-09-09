@@ -24,6 +24,17 @@ function endQuiz(){
                 startQuiz=false;
                button.style.display="block";
                clearInterval(timer);
+   
+               var endEl = document.createElement("h1");
+               var endText = document.createTextNode("You Have Finished The Quiz");
+            endEl.appendChild(endText);
+
+               var scoreEl = document.createElement("h2");
+               var endScore = document.createTextNode("Your Accuracy Is: " + correct+"/15");
+            scoreEl.appendChild(endScore);
+
+            document.body.innerHTML=(endEl<br>scoreEl);
+   
             }
             const sleep = (ms) =>
     new Promise(resolve => setTimeout(resolve, ms));
@@ -61,7 +72,12 @@ function start(){
             myAns.disabled=false;
             button.style.display="none";
             var time=document.getElementById("time");
+         if(time.value===""){
+            timeLeft=60
+         };
+         else {
             timeLeft=Number(time.value);
+         }
             questions = 0;
             timer = setInterval(function(){
                 timeLeft--;
@@ -81,10 +97,12 @@ async function submitNum (){
       myAns=document.getElementById("myAns");
       userAnswer=Number(myAns.value);
       if (ans === userAnswer){
+               mark.style.color:rgb(0,200,0);
                mark.textContent = "Correct";
                correct++;
            }
            else{
+              mark.style.color:rgb(200,0,0);
                mark.textContent = "Incorrect";
               correctAns.textContent="The Correct Answer Is: "+ans;
            }
