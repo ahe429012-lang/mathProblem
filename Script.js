@@ -8,6 +8,7 @@
             var timer;
             var scoreBoard;
             let timeLeft=60;
+            
             var correctAns=document.getElementById("Ans");
             const button = document.getElementById("start")
 
@@ -59,6 +60,8 @@ function start(){
             startQuiz = true;
             myAns.disabled=false;
             button.style.display="none";
+            var time=document.getElementById("time");
+            timeLeft=Number(time.value);
             questions = 0;
             timer = setInterval(function(){
                 timeLeft--;
