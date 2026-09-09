@@ -3,13 +3,14 @@
             var x;
             var y;
             var ans;
+            var startQuiz=false;   
             let timeLeft=60;
 
             var timerDisplay = document.getElementById("timerDisplay");
            var myAns = document.getElementById("myAns");
 function endQuiz(){
                 myAns.disabled= true;
-                start=false;
+                startQuiz=false;
             }
             
 var timer = setInterval(function(){
@@ -25,14 +26,14 @@ var timer = setInterval(function(){
             x=1;
             y=1;
            
-            var start = false;
+          
             
             var userAnswer = Number(myAns.value);
             var mark = document.getElementById("mark");
             var correct = 0;
         
 function start(){
-            start = true;
+            startQuiz = true;
             myAns.disabled=false;
             var questions = 0;
 }
@@ -56,7 +57,7 @@ async function submitNum (){
 
      ans=x*y;
       myAns=document.getElementById("myAns");
-      userAnswer=number(myAns.value);
+      userAnswer=Number(myAns.value);
       if (ans === userAnswer){
                mark.textContent = "Correct";
                correct++;
@@ -68,21 +69,21 @@ async function submitNum (){
             
             problem();
             questions++;
-            myAns.textContent="";
+            myAns.value="";
   };
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') { 
      submitNum();
   }
-
+};
         
         const button = document.getElementById("start")
         button.addEventListener("click", start());
-            if(start===true){
+            if(startQuiz===true){
               for(questions<15;questions++;) problem();
             }
             
             var score = correct/questions;
-            var scoreBoard=document.getElementById("score")
+            var scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
 
