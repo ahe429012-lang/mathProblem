@@ -33,7 +33,10 @@ function endQuiz(){
                var endScore = document.createTextNode("Your Accuracy Is: " + correct+"/15");
             scoreEl.appendChild(endScore);
 
-            document.body.innerHTML=(endEl<br>scoreEl);
+             document.body.innerHTML = "";
+
+    document.body.appendChild(endEl);
+    document.body.appendChild(scoreEl);
    
             }
             const sleep = (ms) =>
@@ -87,6 +90,7 @@ function start(){
     if (timeLeft <= 0) {
         endQuiz();
     }
+   }, 1000);
    problem();
 }
             
@@ -97,21 +101,21 @@ async function submitNum (){
       myAns=document.getElementById("myAns");
       userAnswer=Number(myAns.value);
       if (ans === userAnswer){
-               mark.style.color:rgb(0,200,0);
+               mark.style.color="rgb(0,200,0)";
                mark.textContent = "Correct";
                correct++;
            }
            else{
-              mark.style.color:rgb(200,0,0);
+              mark.style.color="rgb(200,0,0)";
                mark.textContent = "Incorrect";
               correctAns.textContent="The Correct Answer Is: "+ans;
            }
            await sleep(1000);
             mark.textContent = "";
             correctAns.textContent = "";
+          questions++;
            if(questions<15){
               problem();
-            questions++;
            }
          else{
             endQuiz();
