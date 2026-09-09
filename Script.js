@@ -8,6 +8,7 @@
             var timer;
             var scoreBoard;
             let timeLeft=60;
+            const button = document.getElementById("start")
 
             var timerDisplay = document.getElementById("timerDisplay");
            var myAns = document.getElementById("myAns");
@@ -19,6 +20,7 @@
 function endQuiz(){
                 myAns.disabled= true;
                 startQuiz=false;
+               button.style.display="block";
                clearInterval(timer);
             }
             const sleep = (ms) =>
@@ -55,6 +57,7 @@ function problem(){
 function start(){
             startQuiz = true;
             myAns.disabled=false;
+            button.style.display="none";
             questions = 0;
             timer = setInterval(function(){
                 timeLeft--;
@@ -98,7 +101,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
         
-        const button = document.getElementById("start")
+        
         button.addEventListener("click", start);
             if(startQuiz===true){
               problem();
