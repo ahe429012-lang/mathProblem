@@ -10,16 +10,21 @@
 }
 .questions {
   display:flex;
+  flex:1 1 0
   align-items:center;
   gap:20px;
 }
 #myAns {
-  background-color:rgb(210, 210,210);
-  width:100px;
+  background-color:rgb(220, 220,220);
+  width:200px;
   height:80px;
   
 }
-
+#time{
+  height:50px;
+  width:150px;
+}
+  
 h2 {
   margin-left:500px;
 }
