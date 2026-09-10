@@ -86,11 +86,13 @@ function start(){
                 timeLeft--;
     timerDisplay.textContent =
         "Time: " + timeLeft+"  Seconds";
-}, 1000);
+      }, 
+   1000);
+   
     if (timeLeft <= 0) {
         endQuiz();
     }
-   }, 1000);
+ 
    problem();
 }
             
