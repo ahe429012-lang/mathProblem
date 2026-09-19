@@ -14,7 +14,7 @@
 
             var timerDisplay = document.getElementById("timerDisplay");
             var myAns = document.getElementById("myAns");
-            var quesNum = document.getElementById("quesNum");
+            var quesNum;
             
 
       if(quesNum===""){
