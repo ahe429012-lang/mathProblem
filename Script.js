@@ -15,8 +15,14 @@
             var timerDisplay = document.getElementById("timerDisplay");
             var myAns = document.getElementById("myAns");
             var quesNum = document.getElementById("quesNum");
-            quesNum = 15;
+            
 
+      if(quesNum===""){
+         quesNum = 15;
+      }
+      else {
+         quesNum = document.getElementById("quesNum");
+      }
 
                function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
