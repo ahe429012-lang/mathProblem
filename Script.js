@@ -13,7 +13,10 @@
             const button = document.getElementById("start")
 
             var timerDisplay = document.getElementById("timerDisplay");
-           var myAns = document.getElementById("myAns");
+            var myAns = document.getElementById("myAns");
+            var quesNum = document.getElementById("quesNum");
+            quesNum = 15;
+
 
                function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -116,7 +119,7 @@ async function submitNum (){
             mark.textContent = "";
             correctAns.textContent = "";
           questions++;
-           if(questions<15){
+           if(questions<quesNum){
               problem();
            }
          else{
