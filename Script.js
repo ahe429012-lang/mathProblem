@@ -33,7 +33,7 @@ function endQuiz(){
             endEl.appendChild(endText);
 
                var scoreEl = document.createElement("h2");
-               var endScore = document.createTextNode("Your Accuracy Is: " + correct+"/15");
+               var endScore = document.createTextNode("Your Accuracy Is: " + correct+"/"+quesNum);
             scoreEl.appendChild(endScore);
 
              document.body.innerHTML = "";
@@ -61,7 +61,7 @@ function updateNum(){
                 qX.textContent=x;
                 qY.textContent=y;
                 scoreBoard=document.getElementById("score");
-            scoreBoard.textContent= "Accuracy:"+correct+"/15";
+            scoreBoard.textContent= "Accuracy:"+correct+"/"+quesNum;
 }
 
 function problem(){
@@ -139,7 +139,7 @@ document.addEventListener('keydown', (e) => {
               problem();
             }
             
-            var score = correct+"/"+"15";
+            var score = correct+"/"+quesNum;
             scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
             if (timeLeft<=0)
