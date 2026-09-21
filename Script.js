@@ -8,6 +8,8 @@
             var timer;
             var scoreBoard;
             let timeLeft=60;
+            var Select = document.getElementById("select");
+               
             
             var correctAns=document.getElementById("Ans");
             const button = document.getElementById("start")
@@ -107,7 +109,12 @@ function start(){
 
 async function submitNum (){
 
+   if(Select.value === "*") {
      ans=x*y;
+   }
+   else{
+      ans=x/y;
+   }
       myAns=document.getElementById("myAns");
       userAnswer=Number(myAns.value);
       if (ans === userAnswer){
