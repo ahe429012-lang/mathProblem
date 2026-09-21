@@ -17,12 +17,7 @@
             var timerDisplay = document.getElementById("timerDisplay");
             var myAns = document.getElementById("myAns");
             var quesNum = 15
-               quesNum = document.getElementById("quesNum");
-            
-
-      if(quesNum===""){
-         quesNum = 15;
-      }
+               
       
 
                function rand(min, max) {
@@ -85,6 +80,12 @@ function start(){
             myAns.disabled=false;
             button.style.display="none";
             var time=document.getElementById("time");
+
+            quesNum = document.getElementById("quesNum");
+            if(quesNum===""){
+         quesNum = 15;
+         }
+   
          if(time.value===""){
             timeLeft=60
          }
@@ -154,5 +155,6 @@ document.addEventListener('keydown', (e) => {
             var score = correct+"/"+quesNum;
             scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
-            if (timeLeft<=0)
+           while (timeLeft<=0) {
             {endQuiz();};
+           }
