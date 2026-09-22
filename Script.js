@@ -73,9 +73,9 @@ function problem(){
             ans=x*y;
          }
           else{
-            var answer = rand(1,10);
+            ans = rand(1,10);
             y = rand(1,10);
-            x = answer*y;
+            x = ans*y;
          }
    
    
