@@ -82,9 +82,12 @@ function start(){
             var time=document.getElementById("time");
 
             quesNum = document.getElementById("quesNum");
-            if(quesNum===""){
+            if(quesNum.value===""){
          quesNum = 15;
          }
+            else {
+               quesNum = Number(quesNum.value);
+            }
    
          if(time.value===""){
             timeLeft=60
@@ -97,11 +100,13 @@ function start(){
                 timeLeft--;
     timerDisplay.textContent =
         "Time: " + timeLeft+"  Seconds";
+               
+          if (timeLeft <= 0) {
+        endQuiz();
       }, 
    1000);
    
-    if (timeLeft <= 0) {
-        endQuiz();
+   
     }
  
    problem();
