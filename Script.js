@@ -160,6 +160,4 @@ document.addEventListener('keydown', (e) => {
             var score = correct+"/"+quesNum;
             scoreBoard=document.getElementById("score");
             scoreBoard.textContent= score;
-           while (timeLeft<=0) {
-            {endQuiz();};
-           }
+           
