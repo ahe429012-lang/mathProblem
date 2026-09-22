@@ -103,12 +103,9 @@ function start(){
                
           if (timeLeft <= 0) {
         endQuiz();
-      }, 
-   1000);
+         }  
+      },1000);
    
-   
-    }
- 
    problem();
 }
             
