@@ -4,9 +4,10 @@
   background-color:rgb(0,200,0);
 }
 #mark {
-  padding:10px;
-  text-align:center;
-  font-size:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:150px;
 }
 .questions {
   display:flex;
