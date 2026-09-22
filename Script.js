@@ -119,7 +119,9 @@ async function submitNum (){
      ans=x*y;
    }
    else{
-      ans=x/y;
+      var answer = rand(1,10);
+      y = rand(1,10);
+      x = answer*y;
    }
       myAns=document.getElementById("myAns");
       userAnswer=Number(myAns.value);
