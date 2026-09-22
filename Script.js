@@ -67,8 +67,19 @@ function updateNum(){
 }
 
 function problem(){
+          if(Select.value === "*") {
             x=rand(1,10);
             y=rand(1,10);
+            ans=x*y;
+         }
+          else{
+            var answer = rand(1,10);
+            y = rand(1,10);
+            x = answer*y;
+         }
+   
+   
+            
            
             updateNum();
           
@@ -112,14 +123,7 @@ function start(){
 
 async function submitNum (){
 
-   if(Select.value === "*") {
-     ans=x*y;
-   }
-   else{
-      var answer = rand(1,10);
-      y = rand(1,10);
-      x = answer*y;
-   }
+  
       myAns=document.getElementById("myAns");
       userAnswer=Number(myAns.value);
       if (ans === userAnswer){
