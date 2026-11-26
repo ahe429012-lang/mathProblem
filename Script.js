@@ -9,6 +9,9 @@
             var scoreBoard;
             let timeLeft=60;
             var Select = document.getElementById("select");
+            var xMin;
+            var yMin;
+           
                
             
             var correctAns=document.getElementById("Ans");
@@ -68,13 +71,13 @@ function updateNum(){
 
 function problem(){
           if(Select.value === "*") {
-            x=rand(1,10);
-            y=rand(1,10);
+            x=rand(1,xMin);
+            y=rand(1,yMin);
             ans=x*y;
          }
           else{
-            ans = rand(1,10);
-            y = rand(1,10);
+            ans = rand(1,xMin);
+            y = rand(1,yMin);
             x = ans*y;
          }
    
@@ -91,7 +94,10 @@ function start(){
             myAns.disabled=false;
             button.style.display="none";
             var time=document.getElementById("time");
-
+            xMin = document.getElementById("xMin");
+            yMin = document.getElementById("yMin");
+            minX = Number(xMin.value);
+            minY = Number(yMin.value);
             quesNum = document.getElementById("quesNum");
             if(quesNum.value===""){
          quesNum = 15;
