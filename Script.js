@@ -71,13 +71,13 @@ function updateNum(){
 
 function problem(){
           if(Select.value === "*") {
-            x=rand(1,xMin);
-            y=rand(1,yMin);
+            x=rand(1,minX);
+            y=rand(1,minY);
             ans=x*y;
          }
           else{
-            ans = rand(1,xMin);
-            y = rand(1,yMin);
+            ans = rand(1,minX);
+            y = rand(1,minY);
             x = ans*y;
          }
    
@@ -96,8 +96,14 @@ function start(){
             var time=document.getElementById("time");
             xMin = document.getElementById("xMin");
             yMin = document.getElementById("yMin");
+         if(xMin.value==="" || yMin.value===""){
+            minX = 10;
+            minY = 10;
+         }
+         else{
             minX = Number(xMin.value);
             minY = Number(yMin.value);
+         }
             quesNum = document.getElementById("quesNum");
             if(quesNum.value===""){
          quesNum = 15;
